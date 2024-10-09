@@ -1,13 +1,13 @@
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
-#define TRIG_PIN 3
+#define TRIG_PIN 3  
 #define ECHO_PIN 4
 #define RELAY_PIN 9
 
-#define TANK_FULL 30
+#define TANK_FULL 30  // JSN-SR04T can go as low as 17cm (30cm from spec) check your sensor minimum distance
 #define TANK_EMPTY 140
-
+const int motor_off_at = 95;
 
 const int thermistorPin = A1;
 const int seriesResistor = 10000; // 10k resistor
@@ -71,7 +71,7 @@ void loop() {
     lcd.print("M:ON");
   }
   
-  if (waterLevel >=96)
+  if (waterLevel >=motor_off_at)
   {
     digitalWrite(RELAY_PIN, HIGH); // Turn off motor
     lcd.setCursor(0, 1);
