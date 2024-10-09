@@ -10,3 +10,7 @@ Components used
 4. 103 thermistor
 5. resistors(10k)
 6. relay module etc
+
+
+Circuit Diagram 
+![image](https://github.com/user-attachments/assets/1816e4fd-a316-45ec-a7a6-8be5623043a0)
